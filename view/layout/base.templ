@@ -1,0 +1,67 @@
+package layout
+
+templ Base() {
+	<html lang="en">
+		<head>
+			<title></title>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<script src="https://cdn.tailwindcss.com"></script>
+			<style>
+			 :root {
+        --code-color: darkred;
+        --code-bg-color: #aaaaaa;
+        --code-font-size: 14px;
+        --code-line-height: 1.4;
+        --scroll-bar-color: #c5c5c5;
+        --scroll-bar-bg-color: #f6f6f6;
+    }
+
+    pre {
+        color: var(--code-color);
+        font-size: var(--code-font-size);
+        line-height: var(--code-line-height);
+        background-color: var(--code-bg-color);
+    }
+
+    .code-block {
+        max-height: 100px;
+        overflow: auto;
+        padding: 8px 7px 5px 15px;
+        margin: 0px 0px 0px 0px;
+        border-radius: 7px;
+    }
+
+    ::-webkit-scrollbar-corner { background: rgba(0,0,0,0.5); }
+
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+    }
+
+    /* Works on Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: var(--scroll-bar-bg-color);
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--scroll-bar-color);
+        border-radius: 20px;
+        border: 3px solid var(--scroll-bar-bg-color);
+    }
+			</style>
+			<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+			<script src="https://unpkg.com/htmx.org/dist/ext/multi-swap.js"></script>
+		</head>
+		<body>
+			<div class="flex-1 h-full p-4">
+				@Index()
+			</div>
+		</body>
+	</html>
+}

@@ -1,0 +1,9 @@
+package components
+
+templ Completed_item(item string) {
+    <div id="completed_items">
+	<div id={ "completed" + item } class=" flex mb-2 items-center p-2 border-green-200 border rounded-lg shadow">
+		<p class="w-full line-through text-gray-500">{ item }</p>
+	</div>
+    </div>
+}
